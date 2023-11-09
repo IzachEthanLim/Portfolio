@@ -146,7 +146,7 @@ section img#lake
 {
     height: 100vh;
     position: relative;
-    padding: 100px;
+    padding: 100px 0;
     background: #03072e;
     z-index: 11;
     display: flex;
@@ -201,7 +201,7 @@ section img#lake
     font-size: 10em; 
     color: #7597DE;
     margin-bottom: 10px;
-    margin-left: 290px;
+    margin-left: 320px;
 }
 
 .skills ul li img
@@ -210,33 +210,36 @@ section img#lake
     height: auto;
     color: #7597DE;
     margin-bottom: 10px;
-    margin-left: 290px;
+    margin-left: 350px;
 }
 
 .work{
+    height: 80vh;
     background: #03072e;
+    margin-top: -200px;
 }
 
 .wrapper{
-  display: grid;
-  margin: 200px 90px auto;
-  grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  text-align: center;
+  margin: 200px auto;
 }
 @media (max-width: 700px) {
-  .wrapper{
-    margin: 200px auto;
+  .box {
+    margin-right: 0;
+    height: 260px;
   }
 }
 .wrapper .box{
-  width: 350px;
-  margin: 0 auto;
+  display: inline-block; 
+  width: 500px;
   position: relative;
   perspective: 1000px;
+  vertical-align: top;
+  margin: 200px;
 }
 .wrapper .box .front-face{
   background: #fff;
-  height: 220px;
+  height: 380px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -246,35 +249,39 @@ section img#lake
 }
 .box .front-face .icon{
   height: 80px;
+  text-align: center;
 }
 .box .front-face .icon i{
   font-size: 65px;
+  text-align: center;
 }
 .box .front-face span,
 .box .back-face span{
   font-size: 22px;
   font-weight: 600;
   text-transform: uppercase;
+  text-align: center;
 }
 .box .front-face .icon i,
 .box .front-face span{
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  background: linear-gradient(-135deg, #7597DE, #2B1055);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
 }
 .box .back-face{
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
-  height: 220px;
+  height: 380px;
   width: 100%;
   padding: 30px;
   color: #fff;
   opacity: 0;
   transform-style: preserve-3d;
   backface-visibility: hidden;
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  background: linear-gradient(-135deg, #7597DE, #2B1055);
   transform: translateY(110px) rotateX(-90deg);
   box-shadow: 0px 5px 20px 0px rgba(0, 81, 250, 0.1);
   transition: all 0.5s ease;
@@ -290,4 +297,24 @@ section img#lake
 .box:hover .front-face{
   opacity: 0;
   transform: translateY(-110px) rotateX(90deg);
+}
+footer {
+    background: #1D224E;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-info {
+    margin-bottom: 10px;
+}
+
+.social-links {
+    font-size: 20px;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
 }

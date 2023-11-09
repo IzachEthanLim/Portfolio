@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Izachs Portfolio</title>
+        <title>Izach's Portfolio</title>
         <link rel="stylesheet" type="text/css" href="Style.css" >
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     </head>
@@ -14,8 +14,8 @@
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#sec" data-scroll>About</a></li>
                 <li><a href="#skills" data-scroll>Skills</a></li>
-                <li><a href="#">Works</a></li>
-                <li><a href="#">Contacts</a></li> 
+                <li><a href="#work" data-scroll>Works</a></li>
+                <li><a href="#contact-info" data-scroll>Contacts</a></li> 
             </ul>
         </header>
         <section>
@@ -64,7 +64,7 @@
     </ul>
         </div>
         
-        <div class="work">
+        <div class="work" id='work'>
         <div class="wrapper">
             <div class="box">
                 <div class="front-face">
@@ -76,32 +76,27 @@
                     <p>Programming Lore</p>
                 </div>
             </div>
-        </div>
-        <div class="wrapper">
             <div class="box">
                 <div class="front-face">
                     <div class="icon"><i class="fas fa-pen"></i></div>
-                    <span>Illustration</span>
+                    <span>Illustrations</span>
                 </div>
                 <div class="back-face">
-                    <span>illustration</span>
+                    <span>illustrations</span>
                     <p>Illustration Lore</p>
                 </div>
             </div>
-        </div>
-        <div class="wrapper">
-            <div class="box">
-                <div class="front-face">
-                    <div class="icon"><i class="fas fa-frame"></i></div>
-                    <span>Web Design</span>
-                </div>
-                <div class="back-face">
-                    <span>Web Design</span>
-                    <p>Web Design Lore</p>
-                </div>
             </div>
         </div>
-        </div>
+        <footer>
+    <div class="contact-info">
+        <p>Phone: (123) 456-7890</p>
+        <p>Email: info@example.com</p>
+    </div>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/izach-lim-3bb420238/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+</footer>
         <script>
             let stars = document.getElementById('stars');
             let moon = document.getElementById('moon');
@@ -151,4 +146,5 @@
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
+    
 </html>

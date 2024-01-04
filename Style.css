@@ -18,7 +18,6 @@ header
    top: 0;
    left: 0;
    width: 100%;
-   /* padding: 30px 100px; */
    padding: 0px 100px;
    display: flex;
    justify-content: space-between;
@@ -194,16 +193,11 @@ section img#lake
 }
 
 .work{
-    /* height: 80vh; */
-
     background: #03072e;
-    /* margin-top: -200px; */
 }
 
 .wrapper{
   text-align: center;
-  /* margin: 200px auto; */
-  /* margin-bottom: 200px; */
   display: flex;
   justify-content: center;
   gap: 150px;
@@ -220,7 +214,7 @@ section img#lake
   position: relative;
   perspective: 1000px;
   vertical-align: top;
-  /* margin: 200px; */
+
 }
 .wrapper .box .front-face{
   background: #fff;

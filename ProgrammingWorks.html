@@ -9,24 +9,143 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-around;
-                padding: 20px;
+                padding: 150px;
             }
             .work {
-                width: 300px;
-                margin: 20px;
-                text-align: center;
+            width: 300px;
+            height: 300px;
+            margin: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
             }
+
             .work img {
-                width: 100%;
-                height: auto;
-                border-radius: 8px;
-                margin-bottom: 10px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            position: absolute;
+            top: 0;
+            left: 0;
             }
+
+            .work .work-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            box-sizing: border-box;
+            border-radius: 0 0 8px 8px;
+            }
+
             .work h3 {
+            color: #fff;
+            cursor: pointer;
+            margin: 0;
+            }
+
+            .details {
+                position: fixed;
+                display: none;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(16, 27, 75, 0.8);
+                z-index: 10000;
+            }
+
+            .title {
+                text-align: center;
+                margin-top: 15px;
+                font-size: 50px;
+                color: #fff;
+            }
+
+            .details-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 80px;
+            }
+
+            .details-container img {
+                width: 25rem;
+            }
+
+            .details-container p {
+                width: 35%;
+                font-size: 22px;
+                color: #fff;
+            }
+
+            #closeButton {
+                font-size: 40px;
                 color: #fff;
                 cursor: pointer;
+                padding: 40px;
             }
         </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const info = {
+                "Movie": {
+                    title: "Movie List App",
+                    image: "Images/Movies.jpg",
+                    description: "An Android App made in Android Studio. The app allows the user to add movies along with its genre, year, and rating into a list. As well as being able to check the list for movies that are already added."
+                },
+                "ToDo": {
+                    title: "To Do List App",
+                    image: "Images/ToDoList.jpg",
+                    description: "A To Do List App made in Android Studio that allows the user to check what is on the To Do List, along with the date and day of the task on the To Do List."
+                },
+                "ContactsInfo": {
+                    title: "Contacts List App",
+                    image: "Images/Contacts.jpg",
+                    description: "An Android App made with Android Studio. The app lets the user view a contact list with the names, gender, and number of the person on the contact List."
+                },
+                "Wards": {
+                    title: "Ward Management Program",
+                    image: "Images/Ward.jpg",
+                    description: "A Program made using JAVA code. The program that allows the staff to view, edit, admit, and discharge patients, visitors, and Wards."
+                },
+                "SOI": {
+                    title: "SOI Portal",
+                    image: "Images/SOI Portal.jpg",
+                    description: "An SOI Portal made in HTML code and Bootstrap. The Website uses HTML to create the structure of the website and using styles to create a general design, and using Bootstrap to make animations and add more details"
+                },
+                "Tourism": {
+                    title: "Tourism Website",
+                    image: "Images/Tourism Website.jpg",
+                    description: "A Tourism Website made using HTML code, using HTML to create the website and Stylesheets to implant a video as the background and make the translucent containers"
+                },
+                
+            }
+
+            document.getElementById("closeButton").addEventListener("click", function() {
+                document.querySelector(".details").style.display = "none";
+            })
+
+            document.querySelectorAll(".portfolio-work").forEach((e) => {
+                e.addEventListener("click", function() {
+                    if (info[e.getAttribute("id")]) {
+                        let details = info[e.getAttribute("id")];
+                        document.querySelector(".title").innerText = details.title;
+                        document.querySelector(".details-image").src = details.image;
+                        document.querySelector(".details-paragraph").innerText = details.description;
+                        document.querySelector(".details").style.display = "block";
+                        console.log("asd")
+
+                    }
+                })
+            })
+            })
+            
+            </script>
     </head>
     <body>
         <header>
@@ -35,47 +154,74 @@
             </a>
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#sec" data-scroll>About</a></li>
-                <li><a href="#skills" data-scroll>Skills</a></li>
-                <li><a href="#work" data-scroll>Works</a></li>
-                <li><a href="#contact-info" data-scroll>Contacts</a></li> 
+                <li><a href="index.html#sec" data-scroll>About</a></li>
+                <li><a href="index.html#skills" data-scroll>Skills</a></li>
+                <li><a href="index.html#work" data-scroll>Works</a></li>
+                <li><a href="index.html#contact-info" data-scroll>Contacts</a></li> 
             </ul>
         </header>
+        <div class="details">
+            <span id="closeButton" style="float:right">X</span>
+            <h1 class="title">TITLE</h1>
+            <div class="details-container">
+                <img class="details-image" src="Images/WallpaperRed.png">
+                <p class="details-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis dui ante. Fusce dui ante, lobortis eu odio condimentum, molestie porttitor leo. In maximus sapien gravida, rutrum lacus non, pharetra metus. Donec vel iaculis leo, quis tempus est. Vestibulum faucibus imperdiet velit ac ultricies. Vestibulum sed feugiat neque. Aenean nec libero quis ligula cursus eleifend. Maecenas sed eleifend odio. Praesent molestie justo sit amet nibh sollicitudin, non volutpat nisi tristique. Donec molestie sed lectus sed aliquet. Donec bibendum sodales ligula id eleifend.</p>
+            </div>
+        </div>
 
         <div class="portfolio">
             <div class="work">
-                <a href="">
-                    <img src="" alt="">
+                <div class="portfolio-work" id="Movie" href="">
+                    <img src="Images/Movies.jpg" alt="">
+                    <div class="work-content">
                     <h3>Movie List App</h3>
-                </a>
+                    </div>
+                </div>
             </div>
     
             <div class="work">
-                <a href="">
-                    <img src="" alt="">
+                <div class="portfolio-work" id="ToDo" href="">
+                    <img src="Images/ToDoList.jpg" alt="">
+                    <div class="work-content">
                     <h3>To Do List App</h3>
-                </a>
+                    </div>
+                </div>
             </div>
     
             <div class="work">
-                <a href="">
-                    <img src="" alt="">
+                <div class="portfolio-work" id="ContactsInfo" href="">
+                    <img src="Images/Contacts.jpg" alt="">
+                    <div class="work-content">
                     <h3>Contact List App</h3>
-                </a>
+                    </div>
+                </div>
             </div>
     
             <div class="work">
-                <a href="">
-                    <img src="" alt="">
+                <div class="portfolio-work" id="Wards" href="">
+                    <img src="Images/Ward.jpg" alt="">
+                    <div class="work-content">
                     <h3>Ward Management Program</h3>
-                </a>
+                    </div>
+                </div>
             </div>
     
             <div class="work">
-                <a href="">
-                    <img src="" alt="">
-                    <h3></h3>
-                </a>
+                <div class="portfolio-work" id="SOI" href="">
+                    <img src="Images/SOI Portal.jpg" alt="">
+                    <div class="work-content">
+                    <h3>SOI Portal</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="work">
+                <div class="portfolio-work" id="Tourism" href="">
+                    <img src="Images/Tourism Website.jpg" alt="">
+                    <div class="work-content">
+                    <h3>Tourism Website</h3>
+                    </div>
+                </div>
             </div>
     
         </div>

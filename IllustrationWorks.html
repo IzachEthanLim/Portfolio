@@ -9,24 +9,146 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: space-around;
-                padding: 20px;
+                padding: 150px;
             }
             .work {
-                width: 300px;
-                margin: 20px;
-                text-align: center;
+            width: 300px;
+            height: 300px;
+            margin: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
             }
+
             .work img {
-                width: 100%;
-                height: auto;
-                border-radius: 8px;
-                margin-bottom: 10px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            position: absolute;
+            top: 0;
+            left: 0;
             }
+
+            .work .work-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            box-sizing: border-box;
+            border-radius: 0 0 8px 8px;
+            }
+
             .work h3 {
+            color: #fff;
+            cursor: pointer;
+            margin: 0;
+            }
+
+            .details {
+                position: fixed;
+                display: none;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(16, 27, 75, 0.8);
+                z-index: 10000;
+                
+            }
+
+            .title {
+                text-align: center;
+                margin-top: 15px;
+                font-size: 50px;
+                color: #fff;
+            }
+
+            .details-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 80px;
+            }
+
+            .details-container img {
+                width: 28rem;
+                padding: 20px;
+            }
+
+            .details-container p {
+                width: 35%;
+                font-size: 22px;
+                color: #fff;
+            }
+
+            #closeButton {
+                font-size: 40px;
                 color: #fff;
                 cursor: pointer;
+                padding: 40px;
             }
+
         </style>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const info = {
+                "redford": {
+                    title: "City of Redford",
+                    image: "Images/WallpaperRed.png",
+                    description: "This is an illustration of Redford, a fictional city based of gothic style building. I used a drawing software called Clipstudio Paint and chose a red monochromatic color palette as that is the main color of my character that lives in the city. This was made along with 2 other illustrations to be used in a wallpaper for my desktop."
+                },
+                "green": {
+                    title: "Forest of Mystics",
+                    image: "Images/WallpaperGreen.png",
+                    description: "The Forest of Mystics, is a Magical Forest with gigantic trees. Made using Clipstudio Paint and using a green monochromatic color palette as it is the main color of the character living there. This is one of the 3 illustrations made as my desktop background."
+                },
+                "OC": {
+                    title: "OC Design",
+                    image: "Images/Maeve.png",
+                    description: "A illustration of my Original Character using Clipstudio Paint. Her name is 'Meave', based off A fictional Race in Dungeons & Dragons called Tieflings."
+                },
+                "mobile": {
+                    title: "Mobile Portfolio",
+                    image: "Images/Mobile.jpg",
+                    description: "This is a Mobile Portfolio made using Adobe photoshop and XD. Using XD to make the low-fi, high-fi, and prototype of the portfolio's design. And using Photoshop to make some of the logo and assets used in the final product."
+                },
+                "Crystal": {
+                    title: "Crystal Alphabet",
+                    image: "Images/Crystal-Alphabets-2.webp",
+                    description: "An alphabet made to resemble Crystals made using Adobe photoshop and illustrator. Using photoshop to create the shapes and silhouette and illustrator to add the design and effect of crystals to the alphabets."
+                },
+                "Poster": {
+                    title: "Poster Design",
+                    image: "Images/Izach_Poster.png",
+                    description: "A Poster Design made using Adobe photoshop, illustrator, and Clipstudio. Using Clipstudio to create the background, and Adobe to create the Typography and edit the Poster"
+                },
+                
+            }
+
+            document.getElementById("closeButton").addEventListener("click", function() {
+                document.querySelector(".details").style.display = "none";
+            })
+
+            document.querySelectorAll(".portfolio-work").forEach((e) => {
+                e.addEventListener("click", function() {
+                    if (info[e.getAttribute("id")]) {
+                        let details = info[e.getAttribute("id")];
+                        document.querySelector(".title").innerText = details.title;
+                        document.querySelector(".details-image").src = details.image;
+                        document.querySelector(".details-paragraph").innerText = details.description;
+                        document.querySelector(".details").style.display = "block";
+                        console.log("asd")
+
+                    }
+                })
+            })
+            })
+            
+            </script>
     </head>
     <body>
         <header>
@@ -35,54 +157,74 @@
             </a>
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#sec" data-scroll>About</a></li>
-                <li><a href="#skills" data-scroll>Skills</a></li>
-                <li><a href="#work" data-scroll>Works</a></li>
-                <li><a href="#contact-info" data-scroll>Contacts</a></li> 
+                <li><a href="index.html#sec" data-scroll>About</a></li>
+                <li><a href="index.html#skills" data-scroll>Skills</a></li>
+                <li><a href="index.html#work" data-scroll>Works</a></li>
+                <li><a href="index.html#contact-info" data-scroll>Contacts</a></li> 
             </ul>
         </header>
+        <div class="details">
+            <span id="closeButton" style="float:right">X</span>
+            <h1 class="title">TITLE</h1>
+            <div class="details-container">
+                <img class="details-image" src="Images/WallpaperRed.png">
+                <p class="details-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis dui ante. Fusce dui ante, lobortis eu odio condimentum, molestie porttitor leo. In maximus sapien gravida, rutrum lacus non, pharetra metus. Donec vel iaculis leo, quis tempus est. Vestibulum faucibus imperdiet velit ac ultricies. Vestibulum sed feugiat neque. Aenean nec libero quis ligula cursus eleifend. Maecenas sed eleifend odio. Praesent molestie justo sit amet nibh sollicitudin, non volutpat nisi tristique. Donec molestie sed lectus sed aliquet. Donec bibendum sodales ligula id eleifend.</p>
+            </div>
+        </div>
 
     <div class="portfolio">
         <div class="work">
-            <a href="">
+            <div class="portfolio-work" id="redford" href="">
                 <img src="Images/WallpaperRed.png" alt="WallpaperRed">
+                <div class="work-content">
                 <h3>City of RedFord</h3>
-            </a>
+                </div>
+            </div>
         </div>
 
         <div class="work">
-            <a href="">
+            <div class="portfolio-work" id="green" href="">
                 <img src="Images/WallpaperGreen.png" alt="WallpaperGreen">
+                <div class="work-content">
                 <h3>Forest of Mystics</h3>
-            </a>
+                </div>
+            </div>
         </div>
 
         <div class="work">
-            <a href="">
+            <div class="portfolio-work" id="OC" href="">
                 <img src="Images/Maeve.png" alt="Maeve">
+                <div class="work-content">
                 <h3>Character Design</h3>
-            </a>
+                </div>
+            </div>
         </div>
 
         <div class="work">
-            <a href="">
-                <img src="Images/bandicam 2023-08-04 15-03-14-147.mp4" alt="MobilePortfolio">
+            <div class="portfolio-work" id="mobile" href="">
+                <img src="Images/Mobile.jpg" alt="MobilePortfolio">
+                <div class="work-content">
                 <h3>Mobile Portfolio</h3>
-            </a>
+                </div>
+            </div>
         </div>
 
         <div class="work">
-            <a href="">
+            <div class="portfolio-work" id="Crystal" href="">
                 <img src="Images/Crystal-Alphabets-2.webp" alt="CrystalAlphabet">
+                <div class="work-content">
                 <h3>Crystal Font</h3>
-            </a>
+                </div>
+            </div>
         </div>
 
         <div class="work">
-            <a href="">
+            <div class="portfolio-work" id="Poster" href="">
                 <img src="Images/Izach_Poster.png" alt="PosterDesign">
+                <div class="work-content">
                 <h3>Poster Design</h3>
-            </a>
+                </div>
+            </div>
         </div>
 
     </div>
